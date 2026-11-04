@@ -119,4 +119,180 @@ Start Test
 </footer>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudyX - Education App</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f1f5f9;
+  color: #172554;
+}
+
+header {
+  background: #172554;
+  color: white;
+  padding: 25px;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.languages {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.languages button {
+  flex: 1;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.card button {
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>StudyX 📚</h1>
+<p id="tagline">Your Smart Learning Partner</p>
+</header>
+
+<div class="container">
+
+<h2 id="welcome">Welcome Student 👋</h2>
+
+<h3 id="choose">Choose Your Medium</h3>
+
+<div class="languages">
+<button onclick="changeLanguage('en')">
+English
+</button>
+
+<button onclick="changeLanguage('mr')">
+मराठी
+</button>
+</div>
+
+<div class="card">
+<h2 id="class11">📘 Class 11th</h2>
+<p id="desc11">Study Materials and Notes</p>
+<button onclick="alert('Coming Soon!')">
+Explore
+</button>
+</div>
+
+<div class="card">
+<h2 id="class12">📗 Class 12th</h2>
+<p id="desc12">Maharashtra HSC Board Materials</p>
+<button onclick="alert('Coming Soon!')">
+Explore
+</button>
+</div>
+
+<h2 id="subjects">Our Subjects</h2>
+
+<div class="card">⚛️ Physics</div>
+<div class="card">🧪 Chemistry</div>
+<div class="card">📐 Mathematics</div>
+<div class="card">🧬 Biology</div>
+
+<div class="card">
+<h2 id="tests">Online Tests</h2>
+<p id="testdesc">Practice with MCQ Tests.</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 StudyX
+</footer>
+
+<script>
+
+function changeLanguage(lang) {
+
+const text = {
+en: {
+tagline: "Your Smart Learning Partner",
+welcome: "Welcome Student 👋",
+choose: "Choose Your Medium",
+class11: "📘 Class 11th",
+desc11: "Study Materials and Notes",
+class12: "📗 Class 12th",
+desc12: "Maharashtra HSC Board Materials",
+subjects: "Our Subjects",
+tests: "Online Tests",
+testdesc: "Practice with MCQ Tests."
+},
+
+mr: {
+tagline: "तुमचा स्मार्ट शिक्षण साथी",
+welcome: "विद्यार्थ्यांनो, स्वागत आहे 👋",
+choose: "तुमचे माध्यम निवडा",
+class11: "📘 इयत्ता ११ वी",
+desc11: "अभ्यास साहित्य आणि नोट्स",
+class12: "📗 इयत्ता १२ वी",
+desc12: "महाराष्ट्र HSC बोर्ड अभ्यास साहित्य",
+subjects: "आपले विषय",
+tests: "ऑनलाइन टेस्ट",
+testdesc: "MCQ टेस्टचा सराव करा."
+}
+};
+
+for (let id in text[lang]) {
+document.getElementById(id).innerText = text[lang][id];
+}
+
+localStorage.setItem("studyxLanguage", lang);
+}
+
+const savedLanguage =
+localStorage.getItem("studyxLanguage") || "en";
+
+changeLanguage(savedLanguage);
+
+</script>
+
+</body>
 </html>
